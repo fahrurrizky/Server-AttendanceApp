@@ -14,7 +14,7 @@ const kirimEmailRegis = async (email, user) => {
     expiresIn: "10m",
   });
   
-  const redirect = `https://energetic-ruby-sockeye.cyclic.cloud/regis/${token}`;
+  const redirect = `https://client-attendance-app.vercel.app/regis/${token}`;
   const data = await fs.readFile(path.resolve(__dirname, "../emails/registerEmployee.html"), "utf-8");
   const tesCompile = handlebars.compile(data);
   const tempResult = tesCompile({ email, redirect });
